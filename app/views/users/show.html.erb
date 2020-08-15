@@ -1,0 +1,17 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col-lg-offset-3 col-lg-6'>
+      <div class='text-left'>
+        <label>
+          <strong>Fulame:</strong>
+          <%= @user.fullname %>
+        </label><br>
+
+        <label>
+          <strong>Email:</strong>
+          <%= @user.email %>
+        </label>
+     </div>
+     <%= link_to "Home", root_path %>
+     <%= link_to 'Log out', log_out_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+   </div>
