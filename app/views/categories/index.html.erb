@@ -3,14 +3,14 @@
     <thead>
       <tr>
         <th>Name---</th>
-        <th>Parent_id</th>
+        <th>sub_categories</th>
       </tr>
     </thead>
     <tbody>
       <% @categories.each do |category| %>
         <tr>
           <td><%= category.name %></td>
-          <td><%= category.parent_id %></td>
+          <td><%= category.parent_category&.name %></td>
         </tr>
       <% end %>
     </tbody>
