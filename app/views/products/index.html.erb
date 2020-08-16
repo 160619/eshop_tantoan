@@ -2,20 +2,20 @@
   <table>
     <thead>
       <tr>
-        <th>Category id---</th>
         <th>---Name---</th>
         <th>---Description---</th>
         <th>---Price---</th>
+        <th>---Quantity---</th>        
       </tr>
     </thead>
 
     <tbody>
       <% @products.each do |product| %>
         <tr>
-          <td><%= product.category_id %></td>
           <td><%= product.name %></td>
           <td><%= product.description %></td>
           <td><%= product.price %></td>
+          <td><%= product.quantity %></td>
         </tr>
       <% end %>
     </tbody>

@@ -2,13 +2,15 @@
   <table>
     <thead>
       <tr>
-        <th>Name</th>
+        <th>Name---</th>
+        <th>Parent_id</th>
       </tr>
     </thead>
     <tbody>
       <% @categories.each do |category| %>
         <tr>
           <td><%= category.name %></td>
+          <td><%= category.parent_id %></td>
         </tr>
       <% end %>
     </tbody>

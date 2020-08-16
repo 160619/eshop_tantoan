@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2020_08_16_060023) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
+    t.string "parent_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -26,6 +27,7 @@ ActiveRecord::Schema.define(version: 2020_08_16_060023) do
     t.string "name"
     t.string "description"
     t.decimal "price"
+    t.integer "quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
