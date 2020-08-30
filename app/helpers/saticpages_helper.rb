@@ -1,0 +1,2 @@
+module SaticpagesHelper
+end
