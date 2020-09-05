@@ -3,8 +3,13 @@ class ProductsController < ApplicationController
     @products = Product.new
   end
 
+  def show
+    @product = Product.find(params[:id])
+  end
+
+
   def index
-    @products = Product.all
+    @products = Product.all.order(:name)
   end
 
   def create
@@ -21,6 +26,6 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit :category_id, :name, :description, :price, :quantity
+    params.require(:product).permit :category_id, :name, :description, :price, :quantity, :rating, :aggregate_rating, :avatar
   end
 end
