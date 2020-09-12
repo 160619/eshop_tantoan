@@ -5,7 +5,7 @@ ruby '2.7.1'
 gem 'attach', '~> 1.0.1'
 gem 'carrierwave'
 gem 'mini_magick'
-
+gem 'rails-controller-testing'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 # Use postgresql as the database for Active Record

@@ -5,8 +5,10 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-  end
+    @review = @product.reviews.new
+    @comment = @review.comments.new
 
+  end
 
   def index
     @products = Product.all.order(:name)
