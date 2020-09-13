@@ -22,9 +22,11 @@
         <a href="<%= product_review_path(@product, review) %>">
           <%= truncate(review.content, :length => 30) %></a></li>
 
-          <%= render 'comments/form' %>
-            <% @review.comments.each do |comment| %>
+          <%= render 'comments/form' , review: review  %>
+          <% if review.comments.any? %>
+            <% review.comments.each do |comment| %>
             <li>Comment:<%= comment.body %></li>
+           <% end %>
           <% end %>
   <% end %>
   </ul>
