@@ -1,0 +1,13 @@
+ReviewList = document.getElementById('reviews_of_product_<%= @product.id %>');
+
+
+newReviewItem = document.createElement('li');
+
+newReviewItem.appendChild(
+
+  document.createTextNode('<%= @review.user.email %>:<%= @review.rating %>: <%= @review.content %> ')
+
+  $("<%= escape_javascript(render 'reviews/form') %>").appendTo("#reviews");
+);
+ReviewList.appendChild(newReviewItem);
+document.getElementById("new_review_of_product_<%= @review.product_id %>").reset();
