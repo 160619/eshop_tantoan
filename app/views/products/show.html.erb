@@ -11,8 +11,10 @@
 
 <h4>Reviews for <%= @product.name %></h4>
 <% if @product.reviews.any? %>
-  <ul id ='reviews_of_product_<%= @product.id %>'>
+  <div id='reviews'>
       <% @product.reviews.order(:updated_at).reverse.each do |review| %>
+      <div id= "review_item_<%= review.id %>">
+      <p><%= review.user.email %></p>
       <li><% review.rating.times do %>
         <span class="star">★</span>
         <% end %>
@@ -31,11 +33,12 @@
           </li>
         <% end %>
       </ul>
+
       <% if user_signed_in? %>
         <%= render 'comments/form', review: review %>
       <% end %>
     <% end %>
-  </ul>
+  </div>
 <% end %>
 
 <% if user_signed_in? %>
