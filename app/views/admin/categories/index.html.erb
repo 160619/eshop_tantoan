@@ -1,0 +1,23 @@
+<div class="">
+  <table>
+    <thead>
+      <tr>
+        <th>Name---</th>
+        <th>sub_categories</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @categories.each do |category| %>
+        <tr>
+          <td><%= category.name %></td>
+          <td><%= category.parent_category&.name %></td>
+          <td><%= link_to 'Edit', edit_admin_category_path(category) %><br>
+          <%= link_to 'Delete', admin_category_path(category), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+  <%= link_to 'new category', new_admin_category_path %><br>
+  <%= link_to 'home', admin_root_path %>
+</div>

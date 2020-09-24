@@ -1,0 +1,19 @@
+<% provide(:title, 'Edit category') %>
+<% provide(:button_text, 'Save' ) %>
+<h1>Update Category</h1>
+<div class='row'>
+  <div class='col-md-6 col-md-offset-3'>
+    <%= form_for ([:admin, @category]) do |f| %>
+    <div class="form-group">
+      <%= f.label :parent_id %>
+      <%= f.collection_select :parent_id, Category.all, :id, :name,prompt: "Select Category" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class:'form-control',placeholder:"enter your name" %>
+    </div>
+      <%= f.submit yield(:button_text), class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
+<%= link_to 'Back', admin_categories_path%>
