@@ -9,23 +9,10 @@
   <% end %>
 </ul>
 
-<h4>Reviews for <%= @product.name %></h4>
 <% if @product.reviews.any? %>
   <div id='reviews'>
       <% @product.reviews.order(:updated_at).reverse.each do |review| %>
       <div id= "review_item_<%= review.id %>">
-      <p><%= review.user.email %></p>
-      <li><% review.rating.times do %>
-        <span class="star">★</span>
-        <% end %>
-        <% (5 - review.rating).times do %>
-        <span class="out-of">★</span>
-        <% end %>
-        <a href="<%= product_review_path(@product, review) %>">
-          <%= truncate(review.content, :length => 30) %>
-        </a>
-      </li>
-
       <ul id ='comments_of_review_<%= review.id %>'>
         <% review.comments.each do |comment| %>
           <li>
@@ -35,7 +22,7 @@
       </ul>
 
       <% if user_signed_in? %>
-        <%= render 'comments/form', review: review %>
+        <%= render 'comments/form', review: review, comment: @comment%>
       <% end %>
     <% end %>
   </div>
