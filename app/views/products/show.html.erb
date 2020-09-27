@@ -4,10 +4,16 @@
   <li>Price: <%= @product.price %></li>
   <li>Quantity: <%@product.quantity %></li>
   <li>Hinh Anh: <%= image_tag @product.avatar_url.to_s %></li>
-  <% if @product.reviews.any? %>
-    <li>Average Rating: <%= @product.aggregate_rating %></li>
-  <% end %>
+  <li>
+    <strong>Avg rating </strong>
+    <span id="aggregate_rating">
+      <% if @product.reviews.any? %>
+      <%= @product.aggregate_rating %>
+      <% end %>
+    </span>
+  </li>
 </ul>
+
 
 <% if @product.reviews.any? %>
   <div id='reviews'>
